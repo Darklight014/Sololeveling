@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Solo Leveling — Quest System</title>
+    <!-- Font futuristico Rajdhani & Orbitron -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="apple-touch-icon" href="icona.png">
+    <link rel="icon" type="image/png" href="Sololevelingicon.png">
+    <link rel="manifest" href="manifest.json">
+
+
+
+</head>
+<body>
+    <!-- HEADER SISTEMA: Titolo, Rank e Barra EXP -->
+    <header id="system-header">
+        <div class="header-left">
+            <div class="system-tag">[ QUEST LOG SYSTEM ]</div>
+            <h1 id="player-title">HUNTER <span id="player-rank">RANK E</span></h1>
+        </div>
+        <div class="header-right">
+            <div class="exp-label">EXP: <span id="exp-text">0 / 100</span></div>
+            <div class="exp-bar-bg">
+                <div id="exp-bar-fill"></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- BARRA DELLE AREE (Tab orizzontali del tuo disegno) -->
+    <nav id="tabs-bar">
+        <div id="tabs-list"></div>
+        <form id="new-tab-form">
+            <input id="new-tab-input" placeholder="+ Nuova area…" maxlength="20" required />
+            <button type="submit">+</button>
+        </form>
+    </nav>
+
+    <!-- SEZIONE PRINCIPALE: Mostra solo l'area attiva a tutta pagina -->
+    <main id="active-screen">
+        <div class="screen-header">
+            <h2 id="active-area-name">GIORNATA</h2>
+            <button id="delete-area-btn" class="danger-btn" title="Elimina intera area">ELIMINA AREA</button>
+        </div>
+
+        <!-- MODULO PER AGGIUNGERE TASK CON ORA E PRIORITÀ (Come nel disegno) -->
+        <form id="task-form">
+            <input id="task-text" placeholder="Obiettivo / Quest da compiere…" required />
+            <input id="task-time" type="time" title="Orario" />
+            <input type="time" id="task-time" />
+            <select id="task-priority">
+                <option value="Bassa">Bassa</option>
+                <option value="Media" selected>Media</option>
+                <option value="Urgente">Urgente</option>
+            </select>
+            <button type="submit">+ AGGIUNGI OBB</button>
+        </form>
+
+        <!-- LISTA DEGLI OBIETTIVI -->
+        <ul id="task-list"></ul>
+        <p id="empty-tasks-msg">Nessun obiettivo attivo in questa sezione. Aggiungine uno sopra!</p>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

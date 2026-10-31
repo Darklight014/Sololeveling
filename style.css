@@ -1,0 +1,334 @@
+:root {
+    --bg-dark: #060b13;
+    --bg-card: rgba(8, 20, 38, 0.85);
+    --blue-glow: #00d2ff;
+    --blue-border: #0088cc;
+    --blue-muted: #4a759c;
+    --text-main: #e0f2fe;
+    --accent-gold: #ffd700;
+    --danger: #ff3366;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Rajdhani', sans-serif;
+    background-color: var(--bg-dark);
+    background-image: radial-gradient(circle at 50% 10%, rgba(0, 160, 255, 0.15), transparent 70%);
+    color: var(--text-main);
+    padding: 24px;
+    min-height: 100vh;
+}
+
+/* HEADER: Stile Rank & EXP */
+#system-header {
+    max-width: 1000px;
+    margin: 0 auto 24px;
+    padding: 18px 24px;
+    background: var(--bg-card);
+    border: 1px solid var(--blue-border);
+    box-shadow: 0 0 15px rgba(0, 210, 255, 0.25);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.system-tag {
+    font-family: 'Orbitron', monospace;
+    font-size: 11px;
+    color: var(--blue-glow);
+    letter-spacing: 2px;
+}
+
+#player-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 26px;
+}
+
+#player-rank {
+    color: var(--accent-gold);
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
+}
+
+.header-right {
+    min-width: 200px;
+}
+
+.exp-label {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--blue-glow);
+    margin-bottom: 6px;
+    letter-spacing: 1px;
+}
+
+.exp-bar-bg {
+    height: 10px;
+    background: #020914;
+    border: 1px solid var(--blue-border);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+#exp-bar-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #0088cc, var(--blue-glow));
+    transition: width 0.4s ease;
+    box-shadow: 0 0 8px var(--blue-glow);
+}
+
+/* TAB BAR: Schede orizzontali */
+#tabs-bar {
+    max-width: 1000px;
+    margin: 0 auto 16px;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    overflow-x: auto;
+    padding-bottom: 6px;
+}
+
+#tabs-list {
+    display: flex;
+    gap: 8px;
+}
+
+.tab-btn {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 10px 18px;
+    background: rgba(4, 15, 30, 0.7);
+    color: var(--blue-muted);
+    border: 1px solid rgba(0, 136, 204, 0.4);
+    cursor: pointer;
+    transition: all 0.2s;
+    text-transform: uppercase;
+}
+
+    .tab-btn:hover {
+        color: var(--text-main);
+        border-color: var(--blue-glow);
+    }
+
+    .tab-btn.active {
+        background: rgba(0, 136, 204, 0.25);
+        color: #fff;
+        border-color: var(--blue-glow);
+        box-shadow: 0 0 12px rgba(0, 210, 255, 0.4);
+    }
+
+#new-tab-form {
+    display: flex;
+    gap: 6px;
+    margin-left: 6px;
+}
+
+    #new-tab-form input {
+        background: #020914;
+        border: 1px solid rgba(0, 136, 204, 0.4);
+        color: #fff;
+        padding: 8px 12px;
+        font-family: inherit;
+        font-size: 13px;
+    }
+
+    #new-tab-form button {
+        background: var(--blue-border);
+        color: #fff;
+        border: none;
+        padding: 8px 14px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+/* SCHERMATA DEDICATA DELL'AREA ATTIVA */
+#active-screen {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: var(--bg-card);
+    border: 1px solid var(--blue-border);
+    box-shadow: 0 0 20px rgba(0, 136, 204, 0.2);
+    padding: 24px;
+}
+
+.screen-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(0, 136, 204, 0.3);
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+}
+
+    .screen-header h2 {
+        font-family: 'Orbitron', sans-serif;
+        font-size: 22px;
+        color: var(--blue-glow);
+        letter-spacing: 2px;
+    }
+
+.danger-btn {
+    background: none;
+    border: 1px solid var(--danger);
+    color: var(--danger);
+    padding: 6px 12px;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+    .danger-btn:hover {
+        background: var(--danger);
+        color: #fff;
+    }
+
+/* MODULO TASK: OBB, ORA, PRIORITÀ */
+#task-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+}
+
+#task-text {
+    flex: 3;
+    min-width: 220px;
+}
+
+#task-time {
+    flex: 1;
+    min-width: 100px;
+}
+
+#task-priority {
+    flex: 1;
+    min-width: 110px;
+}
+
+input, select {
+    background: #020914;
+    border: 1px solid var(--blue-border);
+    color: #fff;
+    padding: 10px 14px;
+    font-family: inherit;
+    font-size: 15px;
+}
+
+    input:focus, select:focus {
+        outline: none;
+        border-color: var(--blue-glow);
+        box-shadow: 0 0 8px rgba(0, 210, 255, 0.5);
+    }
+
+#task-form button {
+    background: linear-gradient(135deg, #0088cc, var(--blue-glow));
+    color: #030a16;
+    font-weight: 800;
+    border: none;
+    padding: 10px 20px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 13px;
+    cursor: pointer;
+    letter-spacing: 1px;
+}
+
+/* LISTA DEGLI OBIETTIVI (Le righe del tuo schizzo) */
+#task-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(2, 9, 20, 0.85);
+    border: 1px solid rgba(0, 136, 204, 0.4);
+    padding: 12px 16px;
+    transition: all 0.2s;
+}
+
+    .task-item:hover {
+        border-color: var(--blue-glow);
+        transform: translateX(3px);
+    }
+
+    .task-item input[type=checkbox] {
+        width: 18px;
+        height: 18px;
+        accent-color: var(--blue-glow);
+        cursor: pointer;
+    }
+
+.task-name {
+    flex: 1;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.task-time-badge {
+    font-family: 'Orbitron', monospace;
+    font-size: 12px;
+    color: var(--blue-glow);
+    padding: 4px 8px;
+    background: rgba(0, 136, 204, 0.2);
+    border: 1px solid rgba(0, 210, 255, 0.3);
+}
+
+.task-priority-badge {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 4px 8px;
+    border-radius: 2px;
+}
+
+.prio-Bassa {
+    color: #88ccff;
+    border: 1px solid #0088cc;
+}
+
+.prio-Media {
+    color: var(--accent-gold);
+    border: 1px solid var(--accent-gold);
+}
+
+.prio-Urgente {
+    color: var(--danger);
+    border: 1px solid var(--danger);
+}
+
+.task-item.completed .task-name {
+    text-decoration: line-through;
+    color: var(--blue-muted);
+}
+
+.task-del-btn {
+    background: none;
+    border: none;
+    color: var(--blue-muted);
+    font-size: 18px;
+    cursor: pointer;
+    padding: 0 4px;
+}
+
+    .task-del-btn:hover {
+        color: var(--danger);
+    }
+
+#empty-tasks-msg {
+    text-align: center;
+    color: var(--blue-muted);
+    padding: 30px 0;
+    font-size: 16px;
+}
